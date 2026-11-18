@@ -1,0 +1,62 @@
+SKILL ARQUITETURA DE CARROSSEL, VERSÃO 2.1
+Skill-mãe + 6 skills-filhas + referências, para escrever o texto de carrosséis de Instagram.
+
+
+# O QUE TEM NESTE PACOTE
+
+00 - LEIA-ME.txt
+Este arquivo.
+
+01 - SKILL PRINCIPAL - Arquitetura de Carrossel.txt
+A skill-mãe (Otto Carrossel). Faz as perguntas iniciais, fecha a Ideia Conectiva, oferece a estrutura e aplica a skill-filha escolhida.
+
+02 a 07 - SKILL FILHA - ....txt
+As 6 skills-filhas, uma por estrutura:
+02. N1-EM (Nair N1): método com autoridade, pra Vender
+03. Picture da Transformação (Paula Retrato): a vida depois do método
+04. Contra Soluções Comuns (Clara Contraste): nova nesta versão
+05. Storynomics (Sofia Storynomics): narrativa com virada e ferramenta prática
+06. AIDA (Aida Clássica): notícia, estudo, comparativo, direto ao ponto
+07. 6 Pontos (Hexa): ritmo rápido com oferta no fim
+
+08 - REFERENCIAS - Anatomia dos 15 carrosseis.txt
+A anatomia slide a slide dos 15 carrosséis estudados (André Lona, @adapta_org, @breakdown.br, @sand_academy, @obrandingg, @elev8ted.path, @themarketingsharuf, @matthgray e @dainwalker), com o encaixe de cada um numa skill-filha.
+
+09 - SKILL COMPLETA (tudo em um arquivo).txt
+Os arquivos 01 a 08 juntos, na ordem, para quem prefere colar uma skill só.
+
+
+# COMO INSTALAR
+
+No Maestro (recomendado): baixe o zip, suba o arquivo no Maestro e peça "instale este arquivo zip como skill". Depois é só pedir o carrossel (tema, objetivo micro e template) e colar o bloco pronto no "Colar texto" do Carrossel Studio.
+
+Opção 1, skill única: cole o conteúdo do arquivo 09 nas instruções do seu assistente (Claude Project, GPT, agente do Adapta ONE ou similar).
+
+Opção 2, skill-mãe com filhas: cadastre o arquivo 01 como skill principal e os arquivos 02 a 07 como skills-filhas, com os mesmos nomes de hashtag. Suba o arquivo 08 como material de consulta.
+
+
+# O QUE MUDOU NA VERSÃO 2.1
+
+1. A entrega final agora sai no padrão "Colar texto" do Carrossel Studio: um bloco com uma linha por campo de texto, na ordem do template, pronto pra copiar e colar no app. A legenda vem separada, marcada como "Legenda (não cole no Colar texto)".
+2. As marcações do Studio (==destaque==, **negrito** e \n de parágrafo) valem por padrão na entrega.
+3. Instrução de instalação direta no Maestro (baixar o zip, subir no Maestro e pedir pra instalar como skill).
+
+
+# O QUE MUDOU NA VERSÃO 2.0 (EM RELAÇÃO À 1.0)
+
+1. A skill-filha Contra Soluções Comuns passou a existir (antes só aparecia na lista da mãe).
+2. Cada skill-filha ganhou: quando usar, insumos numerados, tamanho de cada card, modelos de referência e 2 exemplos completos, escritos do zero no guia de voz.
+3. Os 15 carrosséis estudados foram encaixados nas skills-filhas, com os mesmos nomes dos templates do Carrossel Studio. Pedir "quero no estilo do Playbook" já leva pra N1-EM com a anatomia certa.
+4. A skill-mãe ganhou: a tabela objetivo micro → estrutura, a etapa de insumos com o marcador [PREENCHER: ...] pra quando faltar dado, a seção de densidade (quantas palavras por slide), o checklist antes de entregar e as marcações opcionais do Carrossel Studio (==destaque==, **negrito** e \n).
+5. Correções de texto: a lista de objetivos micro e a de ponto de partida estavam misturadas no step01, e a frase dos 4 princípios estava sem o parêntese de fechamento.
+6. A regra do slide 1 ("convite, nada de hook técnico") foi alinhada com a N1-EM e a Storynomics, que pedem título em tom de comando e hook seco: os dois continuam sendo convites, em frase de gente pra gente.
+
+
+# SOBRE OS EXEMPLOS
+
+Os exemplos de cada skill-filha usam dados fictícios, marcados como "exemplo de treino". Eles mostram a forma do texto. Numa entrega real, prova, número, case, história e citação vêm sempre do usuário, e a skill nunca inventa.
+
+
+# SOBRE AS REFERÊNCIAS
+
+O arquivo 08 traz a estrutura dos carrosséis, sem a transcrição literal dos textos, que pertencem aos autores de cada perfil. Se algum post for da sua empresa, cole o texto original na seção "Textos próprios" do arquivo 08.

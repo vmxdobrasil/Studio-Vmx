@@ -3,7 +3,6 @@
   "semi": false,
   "singleQuote": true,
   "ignorePatterns": [
-    "public/_imported",
     "dist",
     "dist-ssr",
     "build",

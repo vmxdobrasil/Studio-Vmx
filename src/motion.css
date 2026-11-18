@@ -1,0 +1,142 @@
+/* Efeitos de movimento da página da skill, copiados do prado-demo:
+   entradas por scroll (.entra, .entra-linhas, .cartao), onda nos botões,
+   seta dupla, link sublinhado animado e acessibilidade (reduced motion). */
+
+/* ===== Tokens de movimento ===== */
+:root {
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-io: cubic-bezier(0.65, 0, 0.35, 1);
+  --t-entra: 1.1s;
+  --t-estado: 0.6s;
+  --t-micro: 0.32s;
+}
+
+/* ===== Entrada por scroll ===== */
+.js .entra {
+  opacity: 0;
+  transform: translateY(22px);
+}
+.js .entra.is-in {
+  opacity: 1;
+  transform: none;
+  transition:
+    opacity 0.9s var(--ease),
+    transform var(--t-entra) var(--ease);
+  transition-delay: var(--atraso, 0s);
+}
+
+/* Título por linha: cada linha sobe de dentro da máscara */
+.js .entra-linhas .linha {
+  display: block;
+  overflow: hidden;
+  margin: -0.06em 0 -0.16em;
+  padding: 0.06em 0 0.16em;
+}
+.js .entra-linhas .linha > span {
+  display: block;
+  transform: translateY(calc(100% + 0.32em));
+}
+.js .entra-linhas.is-in .linha > span {
+  transform: none;
+  transition: transform 1.15s var(--ease);
+  transition-delay: calc(var(--atraso, 0s) + var(--i, 0) * 80ms);
+}
+
+/* Cards: sobem com a foto em ken-burns */
+.js .cartao {
+  opacity: 0;
+  transform: translateY(80px);
+}
+.js .cartao.is-in {
+  opacity: 1;
+  transform: none;
+  transition:
+    opacity 0.9s var(--ease),
+    transform 1.3s var(--ease);
+  transition-delay: var(--atraso, 0s);
+}
+.js .cartao .cartao__foto {
+  transform: scale(1.1);
+}
+.js .cartao.is-in .cartao__foto {
+  transform: none;
+  transition: transform 2s var(--ease);
+  transition-delay: var(--atraso, 0s);
+}
+
+/* ===== Botão com onda de preenchimento (hover) ===== */
+.btn-onda {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  transition:
+    transform var(--t-micro) var(--ease),
+    box-shadow var(--t-estado) var(--ease),
+    background-color var(--t-estado) var(--ease);
+}
+.btn-onda:before {
+  content: '';
+  position: absolute;
+  inset: -60% -14% -2px;
+  z-index: -1;
+  border-radius: 50% 50% 0 0 / 30px 30px 0 0;
+  transform: translateY(102%);
+  transition: transform 0.62s var(--ease);
+}
+:where(html:not(.is-scrolling)) .btn-onda:hover:before {
+  transform: translateY(0);
+}
+
+/* ===== Setas duplas (sai uma, entra outra) ===== */
+.seta {
+  position: relative;
+  width: 16px;
+  height: 16px;
+  overflow: hidden;
+  flex: none;
+}
+.seta svg {
+  position: absolute;
+  inset: 0;
+  width: 16px;
+  height: 16px;
+  transition: transform 0.5s var(--ease);
+}
+.seta svg + svg {
+  transform: translate(-120%);
+}
+:where(html:not(.is-scrolling)) .btn-onda:hover .seta svg:first-child {
+  transform: translate(120%);
+}
+:where(html:not(.is-scrolling)) .btn-onda:hover .seta svg + svg {
+  transform: translate(0);
+}
+
+/* ===== Link com sublinhado animado ===== */
+.link-sub {
+  background: linear-gradient(currentColor, currentColor) right 100% / 0 1px no-repeat;
+  padding-bottom: 2px;
+  transition: background-size 0.5s var(--ease);
+}
+:where(html:not(.is-scrolling)) .link-sub:hover {
+  background-position: 0 100%;
+  background-size: 100% 1px;
+}
+
+/* ===== Acessibilidade ===== */
+@media (prefers-reduced-motion: reduce) {
+  .js .entra,
+  .js .entra-linhas .linha > span,
+  .js .cartao,
+  .js .cartao .cartao__foto {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .btn-onda,
+  .btn-onda:before,
+  .seta svg,
+  .link-sub {
+    transition: none;
+  }
+}

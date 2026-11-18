@@ -1,0 +1,299 @@
+REFERÊNCIAS: ANATOMIA DOS 15 CARROSSÉIS ESTUDADOS
+Material de apoio da skill-mãe #Arquitetura-de-carrossel e das 6 skills-filhas.
+
+
+# COMO USAR ESTE ARQUIVO
+
+Cada carrossel abaixo foi estudado slide a slide e virou um template no Carrossel Studio, com o mesmo nome. Aqui está a anatomia de cada um: o que cada slide faz, o tamanho aproximado do texto, as técnicas que valem a pena levar e em qual skill-filha ele se encaixa.
+
+Este arquivo não traz a transcrição literal dos textos. Eles pertencem aos autores de cada perfil, então a skill usa só a estrutura e escreve o texto do zero. Se algum desses posts for conteúdo da sua própria empresa (os da @adapta_org, por exemplo), você pode colar o texto original no fim do arquivo, na seção "Textos próprios", e ele passa a valer como exemplo interno.
+
+Regra que vale pra todos: copie a arquitetura, nunca as frases, os dados ou as histórias.
+
+
+# MAPA RÁPIDO
+
+| Template (Carrossel Studio) | Perfil de origem | Slides | Skill-filha |
+| Playbook em Princípios | @breakdown.br | 8 | N1-EM |
+| Raio-X de Perfil | @adapta_org | 6 | N1-EM |
+| Guia Ilustrado | @elev8ted.path | 18 | N1-EM (versão Salvar) |
+| Princípios Anotados | @matthgray | 6 | Picture da Transformação |
+| Frases de Marca | @dainwalker | 10 | Picture da Transformação |
+| Opinião Editorial | André Lona | 12 | Contra Soluções Comuns |
+| Manifesto em Fotos | @obrandingg | 13 | Contra Soluções Comuns |
+| Minimal Didático | @themarketingsharuf | 10 | Contra Soluções Comuns |
+| Case Editorial | André Lona (com @marcados.cc) | 10 | Storynomics |
+| Análise em Capítulos | André Lona | 10 | Storynomics (versão em capítulos) |
+| História em Citação | @adapta_org | 6 a 7 | Storynomics (versão compacta) |
+| Notícia Explicada | @adapta_org | 7 | AIDA |
+| Estudo Explicado | @adapta_org | 6 a 7 | AIDA |
+| Comparativo | @adapta_org | 8 | AIDA |
+| Seleção Comentada | @sand_academy | 10 | 6 Pontos (versão Curadoria) |
+
+
+========================================================================
+N1-EM
+========================================================================
+
+1. PLAYBOOK EM PRINCÍPIOS
+Origem: @breakdown.br, https://www.instagram.com/p/Deyv6sFkXQ8/
+Formato: 8 slides, 4:5
+Objetivo micro provável: Salvar e Seguir
+
+Slide 1 (capa): promessa de "como fazer" um resultado de negócio, em até 4 palavras, com uma palavra marcada. Logo acima, subtítulo curto entre parênteses dizendo de quem é o playbook. Foto recortada da pessoa na parte de baixo.
+Slides 2 a 6 (princípios): rótulo pequeno "Princípio 0N" e contador de página no topo. Número grande. Título afirmativo de 4 a 9 palavras perto da base. Uma ou duas frases de explicação (de 15 a 30 palavras).
+Slide 7 (resumo): rótulo convidando a salvar, título curto e os 5 princípios em linhas, cada um com uma frase de reforço (de 6 a 10 palavras).
+Slide 8 (final): fundo escuro, quem publica e o que estuda, botão pedindo pra seguir.
+
+Técnicas pra levar: contador de página dá sensação de progresso; o slide de resumo é o mais salvo, porque concentra tudo; princípio sempre em frase afirmativa.
+Encaixe na N1-EM: falta o problema invisível e a validação. Acrescente os dois depois da capa e transforme o slide final em CTA com isca.
+
+
+2. RAIO-X DE PERFIL
+Origem: @adapta_org, https://www.instagram.com/p/DefmgyAlgp5/
+Formato: 6 slides, 4:5
+Objetivo micro provável: Vender (comentário com palavra-chave em troca de aula)
+
+Slide 1 (capa): foto da pessoa analisada e título condensado prometendo mostrar como ela faz algo.
+Slide 2 (números): foto com cartões de vidro trazendo números da rotina e dos resultados dela, e uma frase de contraste ("e ainda assim mantém...").
+Slides 3 a 5 (hábitos): um hábito por slide, numerado, com título de 2 a 4 palavras e de 25 a 45 palavras de explicação. Cada slide termina com uma ponte pro próximo hábito.
+Slide 6 (chamada): reenquadra a ideia em uma frase, diz por que a pessoa virou referência e pede um comentário com palavra-chave em troca de uma aula gratuita.
+
+Técnicas pra levar: a validação vem antes do método (números primeiro); as pontes no fim de cada hábito seguram o deslize; CTA com isca concreta.
+Encaixe na N1-EM: ótimo quando o método é ilustrado por um cliente ou por alguém público. Os dados da pessoa precisam vir do usuário.
+
+
+3. GUIA ILUSTRADO
+Origem: @elev8ted.path, https://www.instagram.com/p/Dc9aGz1E30L/
+Formato: 18 slides, 3:4, fundo branco
+Objetivo micro provável: Salvar
+
+Slide 1 (capa): rótulo em caixa alta ("guia"), título grande em serifa condensada, subtítulo em itálico entre parênteses, ilustração recortada e uma anotação à mão com seta. No rodapé, quem escreveu e o convite pra deslizar.
+Slides 2 a 17 (seções): ilustração num quadro cinza com um selo numerado no canto ("#2"), título sem serifa de 3 a 7 palavras e texto corrido de 30 a 70 palavras, com trechos em negrito e, às vezes, itens curtos.
+Slide 18 (fonte): de onde vem o conteúdo, num cartão escuro.
+
+Técnicas pra levar: uma seção por slide; numeração visível; a fonte no fim dá credibilidade sem precisar de autoelogio.
+Encaixe na N1-EM: é a versão Salvar. A fonte ocupa o lugar da validação e o CTA pede pra salvar. Na nossa voz, os itens curtos viram frase corrida.
+
+
+========================================================================
+PICTURE DA TRANSFORMAÇÃO
+========================================================================
+
+4. PRINCÍPIOS ANOTADOS
+Origem: @matthgray, https://www.instagram.com/p/DFA57osP_Qt/
+Formato: 6 slides, 1:1, fotos inteiras
+Objetivo micro provável: Compartilhar e Seguir
+
+Slide 1 (capa): foto com título no topo do tipo "N princípios que mudaram meu jeito de trabalhar", em branco, com uma palavra destacada.
+Slides 2 a 6 (princípios): um princípio numerado por slide, como título no topo (de 4 a 8 palavras). Uma anotação à mão de 4 a 10 palavras comentando o princípio, com seta, círculo ou sublinhado.
+
+Técnicas pra levar: a anotação à mão funciona como a voz interna do autor; frases curtas que cabem numa foto.
+Encaixe na Picture: cada princípio vira um card da nova realidade, com antes e agora. Acrescente conexão emocional, contraste e CTA.
+
+
+5. FRASES DE MARCA
+Origem: @dainwalker, https://www.instagram.com/p/Dc3bdQDHbxb/
+Formato: 10 slides, 4:5, fundo creme
+Objetivo micro provável: Compartilhar
+
+Slide 1 (capa): foto em preto e branco e título curto em caixa alta condensada, corrigindo uma crença comum sobre marca, com a última palavra destacada.
+Slides 2 e 3 (frases): uma frase centralizada por slide (de 12 a 20 palavras), com parte dela em tom mais claro e palavras em itálico ou negrito.
+Slide 4 (ícone): um ícone e uma frase de apoio.
+Slides 5 a 7 (pilares): "01.", "02.", "03." com o nome do pilar em caixa alta, uma linha pontilhada e três linhas curtas (de 5 a 8 palavras cada).
+Slides 8 a 10 (fechamento): frases-síntese e assinatura.
+Cabeçalho e rodapé fixos: marca, logo, assinatura, @ e uma barra de progresso em quadradinhos.
+
+Técnicas pra levar: frases com duas camadas (parte forte, parte suave); pilares numerados com três linhas.
+Encaixe na Picture: os pilares viram os princípios da nova realidade e a frase-síntese vira o Card 7. A abertura do original usa a construção "X não é Y": na nossa voz, troque por pergunta ou por duas frases.
+
+
+========================================================================
+CONTRA SOLUÇÕES COMUNS
+========================================================================
+
+6. OPINIÃO EDITORIAL
+Origem: André Lona (post sobre o mercado de design em 2026)
+Formato: 12 slides, 3:4
+Objetivo micro provável: Comentar e Compartilhar
+
+Slide 1 (capa): foto e pergunta em caixa alta sobre o que está acontecendo com um mercado, com subtítulo prometendo explicar o que mudou.
+Slide 2 (contexto): quem passou anos dominando a técnica e hoje recebe do cliente algo pronto pra "só refinar".
+Slide 3 (choque): o choque de realidade e o que o mercado pedia antes, numa lista com setas.
+Slide 4 (execução): a execução virou comum; o que continua valendo é quem decide.
+Slide 5 (mercado): a enxurrada de ofertas baratas e a pergunta sobre o que continua raro.
+Slide 6 (fluxo): por que isso acontece, num slide colorido em fluxo com setas, chegando ao preço como única régua.
+Slide 7 (contraste): o que o cliente deixou de valorizar e o que ele busca, com marcas de errado e certo.
+Slide 8 (tabela): dois perfis lado a lado, com quatro características cada, e uma pergunta provocativa no fim.
+Slide 9 (virada): quem está se dando bem e como trabalha.
+Slides 10 a 12 (chamada, lista e oferta): o que se aprende, em blocos, e o convite pra um workshop.
+
+Técnicas pra levar: o fluxo com setas explica causa e efeito em um slide; a tabela de dois perfis faz o leitor se localizar; pergunta no fim de cada bloco.
+Encaixe na Contra: o perfil executor é a solução comum e o perfil estratégico é a alternativa. As marcas de errado e certo viram frase corrida no Card 8.
+
+
+7. MANIFESTO EM FOTOS
+Origem: @obrandingg, https://www.instagram.com/p/DeK5-7AjbtQ/
+Formato: 13 slides, 4:5, fotos editoriais em tela cheia
+Objetivo micro provável: Comentar (palavra-chave no fim)
+
+Cabeçalho fixo em três colunas: marca, @ e assinatura.
+Slide 1 (capa): uma linha pequena puxando uma pergunta grande em caixa alta condensada.
+Slides 2 a 12 (manifesto): uma frase por slide (de 6 a 20 palavras), em caixa alta condensada e justificada, mudando de posição e de cor (branco, preto, vermelho) sobre fotos. A sequência vai de "ficou fácil vender" para "o básico virou o mínimo", "quem só entrega o mínimo sofre com desconto", "eu já estive aí", uma crença antiga riscada e a virada sobre o que constrói uma marca forte. Em alguns slides o texto aparece levemente girado.
+Slide 13 (chamada): foto de um lado e painel claro do outro, com a pergunta final e "comenta PALAVRA".
+
+Técnicas pra levar: uma frase por slide cria ritmo de leitura rápido; a frase riscada mostra a mudança de crença sem explicar demais; primeira pessoa gera identificação.
+Encaixe na Contra: cada frase vira um card curto. Ótimo pra Comentar.
+
+
+8. MINIMAL DIDÁTICO
+Origem: @themarketingsharuf, https://www.instagram.com/p/DBi_ksTSyk9/
+Formato: 10 slides, 4:5, fundo claro, tipografia geométrica pesada
+Objetivo micro provável: Salvar e Seguir
+
+Cabeçalho fixo com uma assinatura curta à esquerda e o número do slide à direita; rodapé com copyright e seta.
+Slide 1 (capa): título enorme de "como fazer X que dá resultado" e um objeto recortado sobre uma faixa colorida inclinada.
+Slide 2: pergunta "por que uns funcionam e outros não" e três palavras-chave em pílulas.
+Slide 3: imagem e uma pergunta curta.
+Slide 4: dois cartões, o erro mais comum e o jeito certo, cada um com ícone.
+Slide 5: uma afirmação grande ocupando o slide inteiro, com um número destacado.
+Slides 6 a 9: a fórmula em partes, uma palavra grande por linha.
+Slide 10 (chamada): convite pra salvar e seguir, com uma seta desenhada.
+
+Técnicas pra levar: muito respiro e pouco texto por slide; as pílulas resumem a resposta antes de explicar; o par erro e acerto em cartões.
+Encaixe na Contra: o erro mais comum é a solução comum, a afirmação grande é a virada e a fórmula é o "o que fazer no lugar".
+
+
+========================================================================
+STORYNOMICS
+========================================================================
+
+9. CASE EDITORIAL
+Origem: André Lona, post em parceria com @marcados.cc (caso de identidade visual de um app de música)
+Formato: 10 slides, 3:4
+Objetivo micro provável: Seguir e Vender (fecha com workshop)
+
+Slide 1 (capa): título longo com o conflito (um trabalho de meses recebido como "genérico") e uma coluna lateral com o contexto e uma pergunta.
+Slide 2 (contexto): o lançamento sem aviso, comparação de antes e depois e a reação negativa da internet.
+Slide 3 (virada): por que pareceu genérico num mundo em que qualquer um gera imagem com IA, e a promessa de que o processo conta outra história.
+Slide 4 (processo): o processo em 3 passos numerados, com uma explicação curta.
+Slide 5 (destaque): o detalhe mais surpreendente do processo e a tentativa e erro que ele exigiu.
+Slide 6 (galeria): coluna de fotos e uma pergunta sobre ir na contramão.
+Slide 7 (conclusão): o reenquadramento: o problema estava na falta de conteúdo em volta da peça.
+Slides 8 a 10 (chamada, lista e oferta): o que se aprende em blocos e o convite pro workshop.
+
+Técnicas pra levar: começar pelo conflito público prende quem viu a polêmica; o processo em 3 passos dá a utilidade; a conclusão muda o sentido da história.
+Encaixe na Storynomics: capa = hook, contexto = setup e conflito, destaque = primeira tentativa e erro, processo = Card 7, conclusão = resultado.
+
+
+10. ANÁLISE EM CAPÍTULOS
+Origem: André Lona (análise de um rebranding polêmico de montadora)
+Formato: 10 slides, 3:4
+Objetivo micro provável: Seguir e Vender
+
+Slide 1 (capa): rótulo com a notícia, título em forma de pergunta ("tinha um plano?") e subtítulo dizendo que pouca gente analisou a decisão de negócio.
+Slides 2 a 8 (capítulos): "01.", "02." até "07.", alternando fundo claro e escuro, cada um com título (de 6 a 12 palavras), texto (de 20 a 40 palavras), uma foto da etapa e uma nota lateral curta em serifa.
+Slide 9 (o que a análise mostra): a conclusão sobre a ordem das etapas.
+Slide 10 (o método): o método do autor, numa grade, e um cartão de oferta.
+
+Técnicas pra levar: capítulos numerados dão ritmo de série; alternar fundo claro e escuro marca a passagem de capítulo; a nota lateral funciona como comentário do autor.
+Encaixe na Storynomics: versão em capítulos. Cada capítulo é um dos 9 blocos e o método é o Card 7.
+
+
+11. HISTÓRIA EM CITAÇÃO
+Origem: @adapta_org, https://www.instagram.com/p/DJIHIQyTn_K/ (visual antigo da marca)
+Formato: 6 a 7 slides, 4:5, fundo claro com textura e texto ancorado embaixo
+Objetivo micro provável: Compartilhar e Seguir
+
+Slide 1 (capa): foto com brilho colorido e uma citação centralizada, com o nome de quem disse.
+Slide 2 (contexto): rótulo pequeno, título com palavras em destaque e um parágrafo de contexto.
+Slide 3 (virada): título e três pontos curtos sobre o que mudou.
+Slide 4 (imagem): uma foto do momento e um título.
+Slide 5 (lições): três lições, cada uma com um rótulo em negrito.
+Slide 6 (final): pedido pra compartilhar e convite pra seguir.
+Rodapé fixo: logo, @ e "arraste", que vira "compartilhe" no último slide.
+
+Técnicas pra levar: a citação real na capa já é o hook; as lições com rótulo em negrito são fáceis de salvar.
+Encaixe na Storynomics: versão compacta. A citação precisa ser real e ter autor.
+
+
+========================================================================
+AIDA
+========================================================================
+
+12. NOTÍCIA EXPLICADA
+Origem: @adapta_org, https://www.instagram.com/p/DcCHoucFokv/
+Formato: 7 slides, 4:5
+Objetivo micro provável: Vender (produto ligado ao tema)
+
+Slide 1 (capa): manchete sobre uma big tech adaptando a IA do celular às regras de outro país, com uma imagem que esmaece no fundo.
+Slides 2 e 3 (o porquê): rótulo verde, título curto e cartões com ícones explicando por que a empresa cedeu, com números do mercado e uma citação curta de um executivo.
+Slide 4 (o detalhe): o detalhe que pouca gente percebeu e o que ele muda pro usuário.
+Slide 5 (os dois lados): um lado pragmático e um lado de princípio, cada um com uma frase em negrito.
+Slide 6 (reflexão): o que isso significa pra quem usa IA no dia a dia.
+Slide 7 (chamada): o produto que resolve o problema levantado e o convite pro link da bio.
+
+Técnicas pra levar: rótulos de seção ("por que", "o detalhe", "os dois lados") deixam a notícia fácil de seguir; mostrar os dois lados aumenta a confiança.
+Encaixe na AIDA: manchete = Atenção, o porquê e o detalhe = Interesse, os dois lados e a reflexão = Desejo, a chamada = Ação.
+
+
+13. ESTUDO EXPLICADO
+Origem: @adapta_org, https://www.instagram.com/p/DJKn5JcScPe/ (visual antigo da marca)
+Formato: 6 a 7 slides, 4:5
+Objetivo micro provável: Salvar e Compartilhar
+
+Slide 1 (capa): foto com brilho colorido e título sobre o que um estudo novo mostra.
+Slide 2 (o estudo): quem fez, com quantas pessoas e qual pergunta respondeu.
+Slide 3 (o número): o número principal em destaque e o que ele significa.
+Slide 4 (teste agora): um prompt pronto num cartão, com um selo de "salvar para depois".
+Slide 5 (cuidados): onde ter cuidado ao aplicar, em três pontos.
+Slide 6 (final): pedido pra compartilhar com quem ainda trabalha do jeito antigo.
+
+Técnicas pra levar: o prompt pronto transforma uma notícia em utilidade; o slide de cuidados aumenta a credibilidade.
+Encaixe na AIDA: o número fecha o Interesse, o prompt é o Desejo e os cuidados entram como Card 8 opcional.
+
+
+14. COMPARATIVO
+Origem: @adapta_org, https://www.instagram.com/p/De2y1lcFlko/
+Formato: 8 slides, 4:5
+Objetivo micro provável: Vender (evento)
+
+Slide 1 (capa): pergunta do tipo "quem vai ganhar?" e a promessa de comparar como várias IAs responderam.
+Slides 2 a 5 (opções): uma opção por slide, sempre na mesma estrutura: o print da resposta, uma barra de porcentagem e cartões de análise. Duas variações de layout se alternam.
+Slide 6 (aviso): os limites do teste e onde está o prompt pra quem quiser testar.
+Slide 7 (conclusão): o que isso permite fazer com os números do próprio negócio, e uma pergunta pro próximo slide.
+Slide 8 (oferta): convite pra um evento, com poucas vagas, e o link da bio.
+
+Técnicas pra levar: mesma estrutura em todas as opções facilita a comparação; o aviso honesto antes da oferta.
+Encaixe na AIDA: as opções são o Interesse, a conclusão é o Desejo e a oferta é a Ação.
+
+
+========================================================================
+6 PONTOS
+========================================================================
+
+15. SELEÇÃO COMENTADA
+Origem: @sand_academy, https://www.instagram.com/p/Dejn6YpEQaE/
+Formato: 10 slides, 4:5
+Objetivo micro provável: Salvar e Vender (convite pra conversa)
+
+Slide 1 (capa): foto, logo no canto e título de 15 a 20 palavras prometendo uma seleção curta, com uma parte sublinhada.
+Slide 2 (introdução): fundo escuro, um parágrafo de contexto em cima, uma imagem no meio e um parágrafo sublinhado embaixo resumindo o que os itens têm em comum.
+Slides 3 a 8 (itens): para cada item, um slide claro (número, nome em letra grande, uma frase do que é e uma frase sublinhada do que ele mostra, com duas fotos) e um slide escuro de detalhe (uma etapa específica e o aprendizado dela).
+Slide 9 (reflexão): um parágrafo grande sobre o tema e uma imagem saindo pela borda.
+Slide 10 (chamada): fundo escuro, logo, foto larga, frase sobre o papel da marca, pergunta sublinhada e convite pra agendar uma conversa pelo link da bio.
+
+Técnicas pra levar: o par de slides por item (o que é e o que ensina); o sublinhado marcando a frase mais importante de cada slide; a oferta só aparece no último slide.
+Encaixe na 6 Pontos: versão Curadoria. Capa = Atenção, introdução = Conexão, um slide novo pro Problema, itens = Solução, reflexão = Transição e chamada = Oferta.
+
+
+========================================================================
+TEXTOS PRÓPRIOS
+========================================================================
+
+Cole aqui o texto original dos posts que forem da sua empresa, um por bloco, com o link e a skill-filha em que ele se encaixa. Eles passam a valer como exemplo interno da skill.
+
+[Post 1]
+Link:
+Skill-filha:
+Texto:
