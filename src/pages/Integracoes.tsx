@@ -68,35 +68,36 @@ const PROJETOS: Projeto[] = [
 ]
 
 // Rota e payload conferidos no backend: otto_chat.js registra
-// POST /backend/v1/otto/chat e a migration 0007 define o agente nativo
-// slug "otto-carrossel" (tier reasoning), que responde em stream SSE.
+// POST /backend/v1/otto/chat com corpo { message, conversation_id? } e responde
+// em stream SSE com o id da conversa no header X-Conversation-Id.
 const CURL_AGENTE = `curl -N -X POST "https://carrossel-studio-copy-clone-clone-71f95.shrd01.internal.goskip.dev/backend/v1/otto/chat" \\
   -H "Authorization: Bearer <TOKEN_DO_USUARIO>" \\
   -H "Content-Type: application/json" \\
   -d '{
-    "messages": [
-      { "role": "user", "content": "Carrossel sobre os 5 erros que travam o perfil de uma lojista de moda. Objetivo: vender consultoria. Template: Lista Condensada." }
-    ],
-    "context": { "template": "listaCondensada", "objetivo": "vender" }
+    "message": "Carrossel sobre os 5 erros que travam o perfil de uma lojista de moda. Objetivo: vender consultoria. Template: Lista Condensada."
+  }'
+
+# Para continuar uma conversa existente, mande o id devolvido no
+# header X-Conversation-Id da resposta anterior:
+curl -N -X POST "https://carrossel-studio-copy-clone-clone-71f95.shrd01.internal.goskip.dev/backend/v1/otto/chat" \\
+  -H "Authorization: Bearer <TOKEN_DO_USUARIO>" \\
+  -H "Content-Type: application/json" \\
+  -d '{
+    "message": "Deixe o tom mais direto.",
+    "conversation_id": "<X-Conversation-Id>"
   }'`
 
 const PAYLOAD_CAMPOS = [
   {
-    campo: 'messages',
-    tipo: 'array',
-    desc: 'Histórico da conversa. O último item é a pergunta atual. Formato OpenAI: {role, content}.',
+    campo: 'message',
+    tipo: 'string',
+    desc: 'Obrigatório. A mensagem atual do usuário, em texto livre. Sem ela o backend responde 400 “Escreva uma mensagem para o Otto.”',
   },
   {
-    campo: 'context.template',
+    campo: 'conversation_id',
     tipo: 'string',
-    desc: 'Id do template que define a estrutura (listaCondensada, editorialFoto, ofertaDireta…).',
+    desc: 'Opcional. Id da conversa a continuar (header X-Conversation-Id da resposta anterior). Sem ele, uma nova conversa é aberta.',
   },
-  {
-    campo: 'context.objetivo',
-    tipo: 'string',
-    desc: 'Objetivo micro: vender, autoridade, alcance, salvar, comentar.',
-  },
-  { campo: 'context.marca', tipo: 'string', desc: 'Nome da marca, para o agente citar no texto.' },
 ]
 
 function Bloco({ texto, rotulo }: { texto: string; rotulo?: string }) {
@@ -336,11 +337,13 @@ export function IntegracoesPage() {
             </div>
             <div className="rounded-lg bg-ink/[.04] p-3">
               <div className="text-[11px] text-mute">Corpo</div>
-              <code className="font-mono text-[12px]">JSON: messages[], context{}</code>
+              <code className="font-mono text-[12px]">{'JSON: { message, conversation_id? }'}</code>
             </div>
             <div className="rounded-lg bg-ink/[.04] p-3">
               <div className="text-[11px] text-mute">Resposta</div>
-              <code className="font-mono text-[12px]">stream SSE (text/event-stream)</code>
+              <code className="font-mono text-[12px]">
+                {'stream SSE (text/event-stream) + X-Conversation-Id'}
+              </code>
             </div>
           </div>
 
