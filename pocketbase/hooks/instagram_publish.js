@@ -62,10 +62,15 @@ routerAdd(
       )
     }
 
-    if (refs.length < 2 || refs.length > 10) {
+    // Formato da publicação: 'carousel' (feed, 2 a 10 imagens) ou 'story'
+    // (1 imagem, 9:16, sem legenda — a API de Stories não aceita caption).
+    const isStory = str(body.format).toLowerCase() === 'story'
+
+    // Stories: exatamente 1 imagem. Carrossel: de 2 a 10.
+    if (isStory ? refs.length !== 1 : refs.length < 2 || refs.length > 10) {
       // Veio imagem suficiente, mas nenhuma virou referência válida: não é
       // quantidade, é formato/posse — manda reenviar (o app reenvia as imagens).
-      if (rawCount >= 2) {
+      if (isStory ? rawCount >= 1 : rawCount >= 2) {
         return e.json(400, {
           error:
             'Não conseguimos identificar as imagens deste carrossel na sua conta. Clique em "Publicar carrossel" mais uma vez para o app reenviar as imagens; se o aviso voltar, saia e entre na sua conta.',
@@ -230,8 +235,9 @@ routerAdd(
     //    direto em `children` do carrossel: `children` são IDS de containers
     //    (docs da Meta: "a list of up to 20 container IDs"), e cada item nasce
     //    de um POST /media com image_url + is_carousel_item=true.
+    //    Story não usa containers filhos: pula este laço inteiro.
     const childIds = []
-    for (let i = 0; i < signedUrls.length; i++) {
+    for (let i = 0; isStory ? false : i < signedUrls.length; i++) {
       const ci = $connectors.execute(e.auth, 'INSTAGRAM_POST_IG_USER_MEDIA', {
         ig_user_id: igUserId,
         image_url: signedUrls[i],
@@ -272,12 +278,20 @@ routerAdd(
     // 5b) Container do CARROSSEL apontando para os ids dos filhos.
     //     `children` precisa ser a LISTA de ids: o conector valida o formato
     //     ("Input should be a valid list on parameter `children`").
-    const cr = $connectors.execute(e.auth, 'INSTAGRAM_POST_IG_USER_MEDIA', {
-      ig_user_id: igUserId,
-      media_type: 'CAROUSEL',
-      caption: caption,
-      children: childIds,
-    })
+    // Story: o container é a própria mídia (media_type STORIES, image_url), sem
+    // `children` e sem legenda — a API rejeita caption em Stories.
+    const cr = isStory
+      ? $connectors.execute(e.auth, 'INSTAGRAM_POST_IG_USER_MEDIA', {
+          ig_user_id: igUserId,
+          media_type: 'STORIES',
+          image_url: signedUrls[0],
+        })
+      : $connectors.execute(e.auth, 'INSTAGRAM_POST_IG_USER_MEDIA', {
+          ig_user_id: igUserId,
+          media_type: 'CAROUSEL',
+          caption: caption,
+          children: childIds,
+        })
     if (!cr.successful) {
       if (isTest) {
         return e.json(200, {
