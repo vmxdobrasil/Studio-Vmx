@@ -15,6 +15,7 @@ import {
   Plus,
   Redo2,
   Undo2,
+  Linkedin,
 } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { Button, cx, toast } from '../components/ui'
@@ -28,6 +29,7 @@ import { Filmstrip } from './Filmstrip'
 import { Inspector } from './Inspector'
 import { InstagramModal } from './InstagramModal'
 import { LeftPanel } from './LeftPanel'
+import { LinkedInModal } from './LinkedInModal'
 import { current, placeImage, selectedElement, update, updateEl, useCurrent } from './ops'
 import { PreviewModal } from './PreviewModal'
 
@@ -35,6 +37,7 @@ export function StudioPage({ id }: { id: string }) {
   const open = useEditor((s) => s.open)
   const exists = useApp((s) => !!s.carousels[id])
   const [showInstagram, setShowInstagram] = useState(false)
+  const [showLinkedIn, setShowLinkedIn] = useState(false)
 
   useEffect(() => {
     open(id)
@@ -59,7 +62,7 @@ export function StudioPage({ id }: { id: string }) {
 
   return (
     <div className="h-full flex flex-col">
-      <TopBar onInstagram={() => setShowInstagram(true)} />
+      <TopBar onInstagram={() => setShowInstagram(true)} onLinkedIn={() => setShowLinkedIn(true)} />
       <div className="flex-1 min-h-0 flex">
         <LeftPanel carousel={carousel} onPublish={() => setShowInstagram(true)} />
         <main className="flex-1 min-w-0 flex flex-col">
@@ -73,11 +76,16 @@ export function StudioPage({ id }: { id: string }) {
         open={showInstagram}
         onClose={() => setShowInstagram(false)}
       />
+      <LinkedInModal
+        carousel={carousel}
+        open={showLinkedIn}
+        onClose={() => setShowLinkedIn(false)}
+      />
     </div>
   )
 }
 
-function TopBar({ onInstagram }: { onInstagram: () => void }) {
+function TopBar({ onInstagram, onLinkedIn }: { onInstagram: () => void; onLinkedIn: () => void }) {
   const carousel = useCurrent()!
   const project = useApp((s) => s.projects.find((p) => p.id === carousel.projectId))
   const saveState = useApp((s) => s.saveState)
@@ -157,13 +165,19 @@ function TopBar({ onInstagram }: { onInstagram: () => void }) {
       <Button size="sm" variant="secondary" onClick={() => setPreview(true)}>
         <Eye size={15} /> Preview
       </Button>
-      <ExportMenu onInstagram={onInstagram} />
+      <ExportMenu onInstagram={onInstagram} onLinkedIn={onLinkedIn} />
       <PreviewModal carousel={carousel} open={preview} onClose={() => setPreview(false)} />
     </div>
   )
 }
 
-function ExportMenu({ onInstagram }: { onInstagram: () => void }) {
+function ExportMenu({
+  onInstagram,
+  onLinkedIn,
+}: {
+  onInstagram: () => void
+  onLinkedIn: () => void
+}) {
   const [open, setOpen] = useState(false)
   const [progress, setProgress] = useState<string | null>(null)
   const bump = useApp((s) => s.bumpExports)
@@ -238,6 +252,9 @@ function ExportMenu({ onInstagram }: { onInstagram: () => void }) {
           <div className="my-1 border-t border-line" />
           <button className={item} onClick={() => (setOpen(false), onInstagram())}>
             <Instagram size={15} /> Postar no Instagram
+          </button>
+          <button className={item} onClick={() => (setOpen(false), onLinkedIn())}>
+            <Linkedin size={15} /> Postar no LinkedIn
           </button>
         </div>
       )}
