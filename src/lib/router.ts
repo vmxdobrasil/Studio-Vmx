@@ -6,6 +6,7 @@ export type Route =
   | { name: 'brand-kits' }
   | { name: 'trash' }
   | { name: 'mcp' }
+  | { name: 'integracoes' }
   | { name: 'skill' }
 
 /** Separa path e query do hash (`#/studio/id?otto=1`). */
@@ -25,6 +26,7 @@ function parse(hash: string): Route {
   if (studio) return { name: 'studio', id: decodeURIComponent(studio[1]) }
   if (path.startsWith('/brand-kits')) return { name: 'brand-kits' }
   if (path.startsWith('/lixeira')) return { name: 'trash' }
+  if (path.startsWith('/integracoes')) return { name: 'integracoes' }
   if (path.startsWith('/mcp')) return { name: 'mcp' }
   if (path.startsWith('/skill')) return { name: 'skill' }
   return { name: 'home' }

@@ -11,6 +11,7 @@ import { HomePage } from './pages/Home'
 import { SkillPage } from './pages/SkillPage'
 import { MagicLogin } from './pages/MagicLogin'
 import { McpPage } from './pages/McpPage'
+import { IntegracoesPage } from './pages/Integracoes'
 import { TrashPage } from './pages/Trash'
 import { useSession, type SessionUser } from './services/auth'
 import { StudioPage } from './studio/StudioPage'
@@ -68,6 +69,8 @@ function Workspace({ user }: { user: SessionUser }) {
           <TrashPage />
         ) : route.name === 'mcp' ? (
           <McpPage />
+        ) : route.name === 'integracoes' ? (
+          <IntegracoesPage />
         ) : (
           <HomePage />
         )}

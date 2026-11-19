@@ -5,6 +5,7 @@ import {
   PanelLeftClose,
   PanelLeftOpen,
   Palette,
+  Plug,
   Trash2,
 } from 'lucide-react'
 import { useState } from 'react'
@@ -43,6 +44,7 @@ export function SideNav({ route, user }: { route: Route; user: SessionUser }) {
       go: () => navigate('/lixeira'),
       badge: trashCount,
     },
+    { key: 'integracoes', label: 'Integrações', icon: Plug, go: () => navigate('/integracoes') },
     { key: 'mcp', label: 'Autorizações', icon: KeyRound, go: () => navigate('/mcp') },
   ]
 
