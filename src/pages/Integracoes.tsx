@@ -10,10 +10,11 @@ import {
   Workflow,
 } from 'lucide-react'
 import { useEffect, useState } from 'react'
+import { ConnectorButton } from '../components/skip/ConnectorButton'
 import { toast } from '../components/ui'
 import { TOOLKIT as IG_TOOLKIT } from '../lib/instagram'
 import { TOOLKIT as LI_TOOLKIT } from '../lib/linkedin'
-import { listConnectors } from '../lib/skipConnectors'
+import { listConnectors, type ConnectorStatus } from '../lib/skipConnectors'
 
 /**
  * Integrações — canais de publicação, ecossistema VMX (MCP) e agentes.
@@ -125,7 +126,7 @@ function Bloco({ texto, rotulo }: { texto: string; rotulo?: string }) {
   )
 }
 
-function StatusPill({ status }: { status: 'loading' | 'connected' | 'not_connected' }) {
+function StatusPill({ status }: { status: 'loading' | ConnectorStatus }) {
   if (status === 'loading')
     return (
       <span className="text-[11px] text-mute border border-line rounded-full px-2 py-0.5">
@@ -138,6 +139,12 @@ function StatusPill({ status }: { status: 'loading' | 'connected' | 'not_connect
         <Check size={11} /> Conectado
       </span>
     )
+  if (status === 'expired')
+    return (
+      <span className="text-[11px] font-medium text-orange-600 border border-orange-500/40 bg-orange-500/10 rounded-full px-2 py-0.5">
+        Conexão expirada
+      </span>
+    )
   return (
     <span className="text-[11px] font-medium text-amber-600 border border-amber-500/40 bg-amber-500/10 rounded-full px-2 py-0.5">
       Não conectado
@@ -145,30 +152,45 @@ function StatusPill({ status }: { status: 'loading' | 'connected' | 'not_connect
   )
 }
 
+/** Status da conexão deste toolkit para o USUÁRIO LOGADO (não o builder). */
+function useConnectorStatus(toolkit: string) {
+  const [status, setStatus] = useState<'loading' | ConnectorStatus>('loading')
+  useEffect(() => {
+    let alive = true
+    const fetchStatus = () => {
+      listConnectors()
+        .then((all) => {
+          // Qualquer resposta inesperada cai em not_connected, nunca em “conectado”.
+          const s = all.find((c) => c.toolkit === toolkit)?.status
+          if (alive) setStatus(s === 'connected' || s === 'expired' ? s : 'not_connected')
+        })
+        .catch(() => alive && setStatus('not_connected'))
+    }
+    fetchStatus()
+    // Voltou da tela de consentimento do provedor: atualiza o status na hora.
+    window.addEventListener('focus', fetchStatus)
+    return () => {
+      alive = false
+      window.removeEventListener('focus', fetchStatus)
+    }
+  }, [toolkit])
+  return status
+}
+
 function Canal({
   icon: Icon,
   nome,
   toolkit,
   descricao,
+  comBotaoDeConexao = false,
 }: {
   icon: typeof Instagram
   nome: string
   toolkit: string
   descricao: string
+  comBotaoDeConexao?: boolean
 }) {
-  const [status, setStatus] = useState<'loading' | 'connected' | 'not_connected'>('loading')
-  useEffect(() => {
-    let alive = true
-    listConnectors()
-      .then((all) => {
-        const s = all.find((c) => c.toolkit === toolkit)?.status
-        if (alive) setStatus(s === 'connected' ? 'connected' : 'not_connected')
-      })
-      .catch(() => alive && setStatus('not_connected'))
-    return () => {
-      alive = false
-    }
-  }, [toolkit])
+  const status = useConnectorStatus(toolkit)
 
   return (
     <div className="rounded-xl border border-line p-4 flex gap-3">
@@ -181,6 +203,11 @@ function Canal({
           <StatusPill status={status} />
         </div>
         <p className="text-[12px] text-mute mt-1">{descricao}</p>
+        {comBotaoDeConexao && (
+          <div className="mt-3">
+            <ConnectorButton toolkit={toolkit} name={nome} />
+          </div>
+        )}
       </div>
     </div>
   )
@@ -243,10 +270,9 @@ export function IntegracoesPage() {
         <section className="rounded-2xl border border-line bg-surface p-5">
           <h2 className="text-sm font-semibold mb-1">Canais de publicação</h2>
           <p className="text-[12px] text-mute mb-4">
-            Publicar usa a SUA conta em cada rede, conectada pelos Conectores (botão dentro do
-            Studio). Abra um carrossel e use os botões “Postar” no topo, ao lado de Exportar: cada
-            um abre um modal que renderiza os slides, pede a conexão se faltar e publica com
-            feedback de etapa.
+            Publicar usa a SUA conta em cada rede — conecte aqui mesmo, pelo botão do canal. Abra um
+            carrossel e use os botões “Postar” no topo, ao lado de Exportar: cada um abre um modal
+            que renderiza os slides, pede a conexão se faltar e publica com feedback de etapa.
           </p>
           <div className="space-y-3">
             <Canal
@@ -259,6 +285,7 @@ export function IntegracoesPage() {
               icon={Linkedin}
               nome="LinkedIn"
               toolkit={LI_TOOLKIT}
+              comBotaoDeConexao
               descricao="Carrossel de 2 a 20 imagens como post no seu perfil. Botão “Postar no LinkedIn” no Studio, ao lado do do Instagram."
             />
           </div>
