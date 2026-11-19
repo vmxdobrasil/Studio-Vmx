@@ -29,6 +29,7 @@ routerAdd('POST', '/backend/v1/magic_link_consume', (e) => {
   $app.save(rec)
   const email = rec.getString('email')
   if (!email.endsWith('@adapta.org')) {
+    console.error('magic_link_consume: link para e-mail fora do domínio permitido')
     return e.json(403, { ok: false, error: 'Acesso restrito a contas @adapta.org' })
   }
   let user = null
@@ -37,7 +38,10 @@ routerAdd('POST', '/backend/v1/magic_link_consume', (e) => {
   } catch (errU) {
     user = null
   }
-  if (!user) return e.badRequestError('Link inválido ou expirado')
+  if (!user) {
+    console.error('magic_link_consume: link válido mas sem conta users para ' + email)
+    return e.badRequestError('Link inválido ou expirado')
+  }
   let role = ''
   try {
     role = user.getString('role')

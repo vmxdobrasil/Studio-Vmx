@@ -51,7 +51,7 @@ export function AuthPage() {
         )
       }
     } catch (err) {
-      setError(authErrorMessage(err))
+      setError(authErrorMessage(err, mode === 'recuperar' || mode === 'link'))
     } finally {
       setBusy(false)
     }

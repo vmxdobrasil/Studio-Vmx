@@ -43,7 +43,7 @@ export async function requestMagicLink(email: string): Promise<void> {
 }
 
 /** Mensagem em português para os erros de login e cadastro. */
-export function authErrorMessage(err: unknown): string {
+export function authErrorMessage(err: unknown, semSenha = false): string {
   if (err instanceof ClientResponseError) {
     if (err.status === 0) return 'Sem conexão com o servidor. Tente de novo em instantes.'
     if (err.status === 429) return 'Muitas tentativas seguidas. Espere um pouco e tente de novo.'
@@ -57,11 +57,16 @@ export function authErrorMessage(err: unknown): string {
     ) {
       return 'A senha precisa ter pelo menos 8 caracteres.'
     }
-    if (err.status === 400 && /authenticate/i.test(err.message))
+    if (err.status === 400 && /authenticate/i.test(err.message) && !semSenha)
       return 'E-mail ou senha incorretos.'
-    if (err.status === 400) return 'Confira os dados e tente de novo.'
+    if (err.status === 400)
+      return semSenha
+        ? 'Não foi possível enviar o link agora. Confira o e-mail e tente de novo.'
+        : 'Confira os dados e tente de novo.'
   }
-  return 'Algo deu errado. Tente de novo.'
+  return semSenha
+    ? 'Não foi possível enviar o link de acesso agora. Tente de novo em instantes.'
+    : 'Algo deu errado. Tente de novo.'
 }
 
 export async function signIn(email: string, password: string) {

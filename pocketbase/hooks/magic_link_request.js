@@ -1,8 +1,8 @@
 // pocketbase/hooks/magic_link_request.js
 // POST /backend/v1/magic_link_request — body: { email }
 // Envia link mágico de login (uso único, 15 min) para usuários @adapta.org.
-// Anti-enumeração: responde ok:true exista a conta ou não.
-// Tudo inline no callback (o JSVM não compartilha escopo top-level).
+// Anti-enumeração: responde ok:true exista a conta ou não (só o remetente
+// restrito a @adapta.org devolve erro). Tudo inline no callback.
 routerAdd('POST', '/backend/v1/magic_link_request', (e) => {
   const body = e.requestInfo().body || {}
   const email = String(body.email || '')
@@ -28,7 +28,13 @@ routerAdd('POST', '/backend/v1/magic_link_request', (e) => {
       rec.set('expires', new Date(Date.now() + 15 * 60 * 1000).toISOString())
       rec.set('usado', false)
       $app.save(rec)
-      const url = 'https://carrossel-studio-cc9d1.goskip.app/magic-login?token=' + token
+      // Domínio público do app (SITE_URL). Nunca o host interno do backend: a
+      // SPA não roteia /magic-login lá e o link morreria numa página do API.
+      const site = ($os.getenv('SITE_URL') || 'https://carrossel-studio-cc9d1.goskip.app').replace(
+        /\/+$/,
+        '',
+      )
+      const url = site + '/magic-login?token=' + token
       const message = new MailerMessage({
         from: { address: 'noreply@mail.goskip.dev', name: 'Carrossel Studio' },
         to: [{ address: email }],
@@ -44,9 +50,15 @@ routerAdd('POST', '/backend/v1/magic_link_request', (e) => {
           '</div>',
       })
       $app.newMailClient().send(message)
+      // Visível no stream "hooks": pedido atendido, e-mail despachado.
+      console.log('magic_link_request: link enviado para ' + email)
     } catch (errM) {
-      $app.logger().error('magic_link_request: ' + errM)
+      // A falha do envio é silenciosa para o usuário (anti-enumeração), mas
+      // fica registrada aqui para diagnóstico.
+      console.error('magic_link_request: falha ao enviar e-mail para ' + email + ': ' + errM)
     }
+  } else {
+    console.log('magic_link_request: e-mail sem conta cadastrada: ' + email)
   }
   return e.json(200, { ok: true })
 })
