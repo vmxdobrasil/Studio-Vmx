@@ -43,35 +43,45 @@ export async function instagramStatus(): Promise<ConnectorStateOf | null> {
 export async function postCarouselToInstagram(
   carousel: Carousel,
   onProgress: (step: 'render' | 'upload' | 'publish', done: number, total: number) => void,
+  // 'carousel' publica no feed (2 a 10 imagens, com legenda);
+  // 'story' publica um Story (1 imagem, sem legenda — a API não aceita caption).
+  formato: 'carousel' | 'story' = 'carousel',
 ): Promise<{ mediaId: string; permalink: string | null }> {
+  const isStory = formato === 'story'
   const slides = carousel.slides.length
-  if (slides < 2 || slides > 10) {
+
+  if (isStory) {
+    // Story precisa de exatamente uma página: usa só o primeiro slide.
+    if (slides === 0) {
+      throw new InstagramError('Este carrossel não tem slides para publicar como Story.')
+    }
+  } else if (slides < 2 || slides > 10) {
     throw new InstagramError(
       'O Instagram aceita carrosséis de 2 a 10 slides. Ajuste a quantidade de slides e tente de novo.',
     )
   }
 
-  onProgress('render', 0, slides)
+  // Story renderiza só a primeira página; carrossel renderiza todas.
+  const indices = isStory ? [0] : carousel.slides.map((_, i) => i)
+  const total = indices.length
+
+  onProgress('render', 0, total)
   // JPEG: imagens menores para enviar e o Instagram recomprime de qualquer forma.
   let urls: string[]
   try {
-    urls = await renderSlides(
-      carousel,
-      carousel.slides.map((_, i) => i),
-      'jpeg',
-      (d, t) => onProgress('render', d, t),
-    )
+    urls = await renderSlides(carousel, indices, 'jpeg', (d, t) => onProgress('render', d, t))
   } catch {
     throw new InstagramError('Não conseguimos preparar as imagens do carrossel. Tente de novo.')
   }
 
-  onProgress('upload', 0, slides)
+  onProgress('upload', 0, total)
   const publicUrls: string[] = []
   try {
     for (let i = 0; i < urls.length; i++) {
       const blob = await (await fetch(urls[i])).blob()
-      publicUrls.push(await uploadMedia(blob, `${carousel.name || 'carrossel'}-${i + 1}.jpg`))
-      onProgress('upload', i + 1, slides)
+      const sufixo = isStory ? 'story' : String(i + 1)
+      publicUrls.push(await uploadMedia(blob, `${carousel.name || 'carrossel'}-${sufixo}.jpg`))
+      onProgress('upload', i + 1, total)
     }
   } catch (err) {
     if (err instanceof InstagramError) throw err
@@ -102,8 +112,10 @@ export async function postCarouselToInstagram(
         // Origem dos links assinados que o Instagram vai baixar: precisa ser o
         // BACKEND (o domínio do app não roteia /backend/*).
         origin: pb.baseURL || window.location.origin,
-        caption: carousel.caption ?? '',
+        // Story não aceita legenda: o hook ignora o campo nesse formato.
+        caption: isStory ? '' : (carousel.caption ?? ''),
         carousel: carousel.name || '',
+        format: formato,
       },
     })
   } catch (err) {
