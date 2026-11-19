@@ -195,8 +195,8 @@ export function IntegracoesPage() {
               <code className="font-mono text-[12px]">reasoning</code>
             </div>
             <div className="rounded-lg bg-ink/[.04] p-3">
-              <div className="text-[11px] text-mute">Skills carregadas</div>
-              <code className="font-mono text-[12px]">6 estruturas + referências</code>
+              <div className="text-[11px] text-mute">Resposta</div>
+              <code className="font-mono text-[12px]">stream SSE (text/event-stream)</code>
             </div>
           </div>
 
